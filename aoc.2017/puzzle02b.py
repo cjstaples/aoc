@@ -1,5 +1,6 @@
 import sys
 import csv
+import itertools
 
 def load_puzzle():
 
@@ -15,46 +16,46 @@ def solve_puzzle(indata):
 #    print indata
     total = 0
     for row in indata:
-        print row
+        print 'row: ',row
 
-        rowchecksum = checksum_row(row)
-        print 'rowchecksum = ',rowchecksum
-        total = total + rowchecksum
+        divcheck = divcheck_row(row)
+        print 'row divcheck = ',divcheck
+        total = total + divcheck
         print 'running total = ', total
         print
 
     return (total)
 
-def checksum_row(rowdata):
-    min = int(sys.maxsize)
-    max = 0
+def divcheck_row(rowdata):
+    rowresult = 0
+    print 'rowdata: ',rowdata
 
-    for entry in rowdata:
-        print 'entry = ',entry,'min = ',min,'max = ',max
-        if int(entry) > max:
-            max = int(entry)
-        if int(entry) < min:
-            min = int(entry)
+    for a,b in itertools.permutations(rowdata,2):
+        a = int(a)
+        b = int(b)
+        modresult = a % b
+        divresult = a / b
+        print 'combo: ', a, b, ' -- ','div: ',divresult,'mod: ',modresult
+        if modresult == 0:
+            rowresult = divresult
 
-    rowcx = max - min
-    return rowcx
+    return rowresult
 
 def show_puzzle(output):
     print(output)
 
 
 def main():
-    print('(puzzle02a) main:')
+    print('(puzzle02b) main:')
     print
 
     mydata = load_puzzle()
-
     mysolution = solve_puzzle(mydata)
     show_puzzle(mysolution)
     print
 
     print
-    print('(puzzle02a) end::')
+    print('(puzzle02b) end::')
 
 
 
