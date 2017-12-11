@@ -1,8 +1,4 @@
-import itertools
-import os
 import sys
-import time
-import random
 
 
 def load_puzzle():
@@ -12,7 +8,7 @@ def load_puzzle():
 
 
 def solve_puzzle(indata):
-    print('-- solving for '+ str(indata))
+    print('-- solving for ' + str(indata))
     final = 0
     temp = 0
 
@@ -56,11 +52,7 @@ def main():
     print('(puzzle01a) end::')
 
 
-
 # ----------------------------------------
 if __name__ == '__main__':
     result = main()
     sys.exit(result)
-
-
-
