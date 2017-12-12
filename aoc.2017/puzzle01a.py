@@ -19,9 +19,7 @@ def solve_puzzle(indata):
 
     for index, s in enumerate(charlist):
 
-        print 'current index:', index, 'previous value:', previous, 'current value:', s
-        print 'matches:', matches, 'runningtotal:', temp
-        print
+        print('current index:', index, 'previous value:', previous, 'current value:', s)
         if s == previous:
             matches = True
         else:
@@ -30,6 +28,8 @@ def solve_puzzle(indata):
         if matches:
             final += int(s)
         previous = s
+        print('matches:', matches)
+        print('')
 
     return final
 
@@ -40,15 +40,15 @@ def show_puzzle(output):
 
 def main():
     print('(puzzle01a) main:')
-    print
+    print('')
 
     mydata = load_puzzle()
 
     mysolution = solve_puzzle(mydata)
     show_puzzle(mysolution)
-    print
+    print('')
 
-    print
+    print('')
     print('(puzzle01a) end::')
 
 
