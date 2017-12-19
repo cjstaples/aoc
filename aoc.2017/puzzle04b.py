@@ -43,8 +43,10 @@ def solve_puzzle(phraselist):
         is_valid = False
 
         for word in wordlist:
-            #   print(word)
-            hash = generate_md5_hash(word)
+            print(word)
+            wordnorm = ''.join(sorted(word))
+            print(wordnorm)
+            hash = generate_md5_hash(wordnorm)
             #   print(hash)
             #   print('')
             hashlist.append(hash)
@@ -80,7 +82,7 @@ def show_puzzle(output):
 
 
 def main():
-    print('(puzzle04a) main:')
+    print('(puzzle04b) main:')
     print('')
 
     mydata = load_puzzle()
@@ -90,7 +92,7 @@ def main():
     print('')
 
     print('')
-    print('(puzzle04a) end::')
+    print('(puzzle04b) end::')
 
 
 # ----------------------------------------

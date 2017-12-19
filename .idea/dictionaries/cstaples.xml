@@ -3,12 +3,15 @@
     <words>
       <w>arraydata</w>
       <w>divresult</w>
+      <w>hashcounts</w>
+      <w>hashlist</w>
       <w>maxentry</w>
       <w>minentry</w>
       <w>modresult</w>
       <w>rowchecksum</w>
       <w>rowdata</w>
       <w>rowresult</w>
+      <w>wordlist</w>
     </words>
   </dictionary>
 </component>

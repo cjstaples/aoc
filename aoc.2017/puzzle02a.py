@@ -14,13 +14,13 @@ def solve_puzzle(indata):
     #    print indata
     total = 0
     for row in indata:
-        print row
+        print(row)
 
         rowchecksum = checksum_row(row)
-        print 'rowchecksum = ', rowchecksum
+        print('rowchecksum = ', rowchecksum)
         total = total + rowchecksum
-        print 'running total = ', total
-        print
+        print('running total = ', total)
+        print()
 
     return (total)
 
@@ -30,7 +30,7 @@ def checksum_row(rowdata):
     maxentry = 0
 
     for entry in rowdata:
-        print 'entry = ', entry, 'min = ', minentry, 'max = ', maxentry
+        print('entry = ', entry, 'min = ', minentry, 'max = ', maxentry)
         if int(entry) > maxentry:
             maxentry = int(entry)
         if int(entry) < minentry:
