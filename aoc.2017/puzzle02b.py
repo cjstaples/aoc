@@ -15,12 +15,12 @@ def solve_puzzle(indata):
     #    print indata
     total = 0
     for row in indata:
-        print 'row: ', row
+        print('row: ', row)
 
         divcheck = divcheck_row(row)
-        print 'row divcheck = ', divcheck
+        print('row divcheck = ', divcheck)
         total = total + divcheck
-        print 'running total = ', total
+        print('running total = ', total)
         print
 
     return (total)
@@ -28,14 +28,14 @@ def solve_puzzle(indata):
 
 def divcheck_row(rowdata):
     rowresult = 0
-    print 'rowdata: ', rowdata
+    print('rowdata: ', rowdata)
 
     for a, b in itertools.permutations(rowdata, 2):
         a = int(a)
         b = int(b)
         modresult = a % b
         divresult = a / b
-        print 'combo: ', a, b, ' -- ', 'div: ', divresult, 'mod: ', modresult
+        print('combo: ', a, b, ' -- ', 'div: ', divresult, 'mod: ', modresult)
         if modresult == 0:
             rowresult = divresult
 

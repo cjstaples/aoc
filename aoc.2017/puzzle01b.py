@@ -26,8 +26,8 @@ def solve_puzzle(indata):
             seekindex = seekindex - length
         seekval = charlist[seekindex]
 
-        print 'current index:', index, 'current value:', s, 'seekindex:', seekindex, 'seekval:', seekval
-        print 'matches:', matches, 'runningtotal:', temp
+        print('current index:', index, 'current value:', s, 'seekindex:', seekindex, 'seekval:', seekval)
+        print('matches:', matches, 'runningtotal:', temp)
         print
         if int(s) == int(seekval):
             matches = True
