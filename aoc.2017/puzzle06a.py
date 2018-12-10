@@ -7,13 +7,11 @@ import hashlib
 
 
 def load_puzzle():
-    with open("data/aoc-2017_puzzle-6_tast.txt", "r") as ins:
-        #   with open("data/aoc-2017_puzzle-6_input.txt", "r") as ins:
+    with open("data/aoc-2017_puzzle-6_test.txt", "r") as ins:
         tmp = ins.read().split("\n")
-        #   inputlist = [i.split("\t") for i in tmp]
-        inputlist = [int(n) for n in tmp.split('\t')]
-    #    inputlist = ['a', 'b', 'c']
-    return inputlist
+        arraydata = [i.split("\t") for i in tmp]
+
+    return arraydata
 
 
 def solve_puzzle(inputlist):
