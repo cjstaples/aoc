@@ -1,0 +1,7 @@
+.gitignore
+.idea/*
+.venv*/*
+venv*/*
+Pipfile
+Pipfile.lock
+/*/test/__pycache__/
