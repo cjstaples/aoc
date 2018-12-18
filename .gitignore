@@ -5,3 +5,6 @@ venv*/*
 Pipfile
 Pipfile.lock
 /*/test/__pycache__/
+/*/venv*/*
+aoc.2017/.idea/
+aoc.2018/.idea/
