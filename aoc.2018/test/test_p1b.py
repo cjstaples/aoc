@@ -27,6 +27,6 @@ def test_sample_14():
     assert t == 14
 
 def test_sample_final_part_2():
-    mydata = load_puzzle('../data/puzzle-01/','aoc-2018_puzzle-01_input.txt')
+    mydata = load_puzzle('../data/puzzle-01/','aoc-2019_puzzle-01_input.txt')
     t = solve_puzzle(mydata)
     assert t == 0
