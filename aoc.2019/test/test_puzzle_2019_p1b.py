@@ -19,17 +19,17 @@ class TestPuzzle2019(unittest.TestCase):
     def test_sample_02(self):
         mydata = load_puzzle('../data/puzzle-01/', 'aoc-2019_puzzle-01_input_test-2.txt')   # 1969
         t = solve_puzzle(mydata)
-        assert t == 654
+        assert t == 966
 
     def test_sample_03(self):
         mydata = load_puzzle('../data/puzzle-01/', 'aoc-2019_puzzle-01_input_test-3.txt')   # 100756
         t = solve_puzzle(mydata)
-        assert t == 33583
+        assert t == 50346
 
-    def test_sample_final_part_1(self):
+    def test_sample_final_part_2(self):
         mydata = load_puzzle('../data/puzzle-01/', 'aoc-2019_puzzle-01_input.txt')          # puzzle input
         t = solve_puzzle(mydata)
-        assert t == 3406432
+        assert t == 5106777
 
 
 if __name__ == '__main__':

@@ -11,26 +11,35 @@ def load_puzzle(path, input):
     return arraydata
 
 
-def compute_fuel(data):
-    # fuel = int(data / 3) - 2
-    fuel = compute_fuel_extended(data)
+def compute_fuel(mass):
+    fuel = int(mass / 3) - 2
+    print('mass: ' + str(mass) + ' / fuel: ' + str(fuel))
+    if fuel < 0:
+        fuel = 0
     return fuel
 
 
-def compute_fuel_extended(data):
-    fuel = int(data / 3) - 2
-    print(fuel)
-    return fuel
+def compute_fuel_recursive(mass):
+
+    fuel = compute_fuel(mass)
+    if fuel <= 0:
+        return 0
+    else:
+        print('fuel: '+str(fuel))
+        return fuel + compute_fuel_recursive(fuel)
 
 
 def solve_puzzle(indata):
-    print('-- solving for ' + str(indata))
-    final = 0
+    total_fuel = 0
+    mass = indata[0]
+    print('-- solving for ' + str(mass))
 
     for data in indata:
-        final += compute_fuel(data)
+        total_fuel += compute_fuel_recursive(data)
+        print('total fuel: '+str(total_fuel))
+        print('----')
 
-    return final
+    return total_fuel
 
 
 def show_puzzle(output):
