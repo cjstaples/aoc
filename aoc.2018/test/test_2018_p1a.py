@@ -1,6 +1,6 @@
 # test
 
-from puzzle01a import load_puzzle, solve_puzzle
+from puzzle_2018_01a import load_puzzle, solve_puzzle
 
 def test_sample_00():
     mydata = load_puzzle('../data/puzzle-01/','aoc-2018_puzzle-01_input_test-0.txt')

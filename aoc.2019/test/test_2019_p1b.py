@@ -1,6 +1,6 @@
 # test
 
-from puzzle_2019_01a import load_puzzle, solve_puzzle
+from puzzle_2019_01b import load_puzzle, solve_puzzle
 
 
 def test_sample_00():
