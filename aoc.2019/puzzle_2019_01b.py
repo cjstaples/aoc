@@ -1,13 +1,13 @@
 import sys
 
 
-def load_puzzle(path, input):
-    filename = input
+def load_puzzle(path, puzzle_input):
+    filename = puzzle_input
     pathname = path + filename
     with open(pathname, "r") as ins:
         tmp = ins.read().split("\n")
-        inputlist = [int(i) for i in tmp]
-    arraydata = inputlist
+        input_set = [int(i) for i in tmp]
+    arraydata = input_set
     return arraydata
 
 
