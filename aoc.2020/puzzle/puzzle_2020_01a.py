@@ -66,7 +66,7 @@ def main():
         param = sys.argv[1]
     except IndexError:
         print('** PARAM not found on command line, substitute default test file name**')
-        param = 'aoc-2020_puzzle-00_input.txt'
+        param = 'aoc-2020_puzzle-01_input.txt'
     print('PARAM: [ ' + param + ' ]')
     path = 'data/'
     mydata = load_puzzle(path, param)
