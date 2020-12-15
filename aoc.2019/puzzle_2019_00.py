@@ -34,7 +34,7 @@ def main():
         print('** PARAM not found on command line, substitute default test file name**')
         param = 'aoc-2019_puzzle-00_input.txt'
     print('PARAM: [ ' + param + ' ]')
-    path = 'data/puzzle-00/'
+    path = 'data/puzzle-01/'
     mydata = load_puzzle(path, param)
 
     mysolution = solve_puzzle(mydata)

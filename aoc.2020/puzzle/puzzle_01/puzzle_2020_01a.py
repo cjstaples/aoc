@@ -18,23 +18,18 @@ def solve_puzzle(indata):
     target = 2020
 
     indata.sort()
-    sordata = sorted(indata)
     revdata = sorted(indata, reverse=True)
 
     for data in indata:
         print('seeking match for: ' + str(data) + ' ')
-        for sor in sordata:
-            print('  matching sor: ' + str(sor) + ' ')
-            for rev in revdata:
-                print('  matching rev: ' + str(rev) + ' ')
-                sum = data + sor + rev
-                if sum == target:
-                    product = str(data * sor * rev)
-                    # print('    PRODUCT:: ' + product + ' ')
-                    print('** MATCH **')
-                    match = True
-                    break
-            if match:
+        for rev in revdata:
+            print('  matching: ' + str(rev) + ' ')
+            sum = data + rev
+            if sum == target:
+                product = str(data * rev)
+                # print('    PRODUCT:: ' + product + ' ')
+                print('** MATCH **')
+                match = True
                 break
         if match:
             break
@@ -71,9 +66,9 @@ def main():
         param = sys.argv[1]
     except IndexError:
         print('** PARAM not found on command line, substitute default test file name**')
-        param = 'aoc-2020_puzzle-01_input.txt'
+        param = 'aoc_2020_puzzle_01_input.txt'
     print('PARAM: [ ' + param + ' ]')
-    path = 'data/'
+    path = 'data/puzzle_01/'
     mydata = load_puzzle(path, param)
 
     mysolution = solve_puzzle(mydata)
