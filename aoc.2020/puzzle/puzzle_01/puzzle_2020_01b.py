@@ -64,7 +64,7 @@ def show_puzzle(output):
 
 
 def main():
-    print('(puzzle00a) main:')
+    print('(puzzle01b) main:')
     print('')
 
     try:
@@ -81,7 +81,7 @@ def main():
     print('')
 
     print('')
-    print('(puzzle00a) end::')
+    print('(puzzle01b) end::')
 
 
 # ----------------------------------------
