@@ -35,19 +35,34 @@ def solve_puzzle(indata):
         print('policy vals lower :: ' + str(policy_vals_lower))
         print('policy vals upper :: ' + str(policy_vals_upper))
 
-        print('password lo pos   :: ' + password[policy_vals_lower-1])
-        print('password hi pos   :: ' + password[policy_vals_upper-1])
+        password_lo_pos = str(password[policy_vals_lower-1])
+        password_hi_pos = str(password[policy_vals_upper-1])
 
-        if policy_char in password[policy_vals_lower-1]:
+        print('password lo pos   :: ' + password_lo_pos)
+        print('password hi pos   :: ' + password_hi_pos)
+
+        if policy_char in password_lo_pos:
             val_check_lower = True
+        else:
+            val_check_lower = False
 
-        if policy_char in password[policy_vals_upper-1]:
+        if policy_char in password_hi_pos:
             val_check_upper = True
+        else:
+            val_check_upper = False
 
         print('val_check_lower   :: ' + str(val_check_lower))
         print('val_check_upper   :: ' + str(val_check_upper))
 
-        if False:
+        if val_check_upper or val_check_lower:
+            if val_check_upper and val_check_lower:
+                one_not_both = False
+            else:
+                one_not_both = True
+        else:
+            one_not_both = False
+
+        if one_not_both:
             print('pass')
             passing += 1
         else:
