@@ -29,7 +29,7 @@ def show_puzzle(output):
 
 
 def main():
-    print('(puzzle00a) main:')
+    print('(puzzle04a) main:')
     print('')
 
     try:
@@ -38,7 +38,7 @@ def main():
         print('** PARAM not found on command line, substitute default test file name**')
         param = 'aoc_2020_puzzle_04_input.txt'
     print('PARAM: [ ' + param + ' ]')
-    path = 'data/puzzle_00/'
+    path = 'data/puzzle_04/'
     mydata = load_puzzle(path, param)
 
     mysolution = solve_puzzle(mydata)
@@ -46,7 +46,7 @@ def main():
     print('')
 
     print('')
-    print('(puzzle00a) end::')
+    print('(puzzle04a) end::')
 
 
 # ----------------------------------------
