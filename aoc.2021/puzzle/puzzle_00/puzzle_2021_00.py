@@ -6,7 +6,7 @@ def load_puzzle(path, puzzle_input):
     pathname = path + filename
     with open(pathname, "r") as ins:
         tmp = ins.read().split("\n")
-        input_set = [i for i in tmp]
+        input_set = [int(i) for i in tmp]
     arraydata = input_set
     return arraydata
 
@@ -29,16 +29,16 @@ def show_puzzle(output):
 
 
 def main():
-    print('(puzzle04a) main:')
+    print('(puzzle00a) main:')
     print('')
 
     try:
         param = sys.argv[1]
     except IndexError:
         print('** PARAM not found on command line, substitute default test file name**')
-        param = 'aoc_2020_puzzle_04_input.txt'
+        param = 'aoc_2021_puzzle_04_input.txt'
     print('PARAM: [ ' + param + ' ]')
-    path = 'data/puzzle_04/'
+    path = 'data/puzzle_00/'
     mydata = load_puzzle(path, param)
 
     mysolution = solve_puzzle(mydata)
@@ -46,7 +46,7 @@ def main():
     print('')
 
     print('')
-    print('(puzzle04a) end::')
+    print('(puzzle00a) end::')
 
 
 # ----------------------------------------
