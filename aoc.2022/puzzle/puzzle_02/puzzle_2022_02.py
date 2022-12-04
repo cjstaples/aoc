@@ -11,18 +11,72 @@ def load_puzzle(path, puzzle_input):
     return tmp
 
 
+def get_play_values(data):
+    opp_play = data[:1]
+    my_play = data[-1:]
+    return opp_play, my_play
+
+
+def get_play_score(play):
+    if play == "X":
+        return 1
+    elif play == "Y":
+        return 2
+    elif play == "Z":
+        return 3
+
+
+def get_round_result(entry):
+    if entry in ["A Z", "B X", "C Y"]:
+        return 0
+    elif entry in ["A X", "B Y", "C Z"]:
+        return 3
+    elif entry in ["A Y", "B Z", "C X"]:
+        return 6
+    else:
+        return -1
+
+
 def solve_puzzle(indata):
     print('-- solving for ' + str(indata))
 
+    score_sum = 0
     for data in indata:
-        print('do something with : ' + str(data) + ' ')
+        # incoming data each like 'A Y' or 'B X' or 'C Z'
+        # where first value ABC is opponent play
+        #   A = Rock, B = Paper, C = Scissors
+        # where second value XYZ is your play
+        #   X = Rock (1), Y = Paper (2), Z = Scissors (3)
 
-    return False
+        # get play values from data line
+        opponent_play, your_play = get_play_values(data)
+        print(f'gpv: {opponent_play} and {your_play}')
+
+        # get score for your play_value
+        #   X = Rock (1), Y = Paper (2), Z = Scissors (3)
+        play_score = get_play_score(your_play)
+        print(f'play score: {play_score}')
+
+        # get score for rps_round_result
+        #   (0 for loss, 3 for draw, 6 for win)
+        #   brute forcing values here for now
+        #   (AZ, BX, CY) = 0
+        #   (AX, BY, CZ) = 3
+        #   (AY, BZ, CX) = 6
+        rps_round_result = get_round_result(data)
+        print(f'round result: {rps_round_result}')
+
+        score_sum = score_sum + rps_round_result + play_score
+
+    # sum of all data-lines scores
+    # e.g. for sample A Y (6+2=8), B X (0+1=1), C Z (3+3=6) total = (15)
+
+    return score_sum
 
 
 def show_puzzle(output):
     print('----')
-    print(output)
+    print(f'total: {output}')
     print('----')
 
 
