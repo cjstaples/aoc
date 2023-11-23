@@ -30,14 +30,14 @@ def show_puzzle(output):
 
 
 def main():
-    print('(puzzle00a) main:')
+    print('(puzzle_2023-00a) main:')
     print('')
 
     try:
         param = sys.argv[1]
     except IndexError:
         print('** PARAM not found on command line, substitute default test file name**')
-        param = 'aoc_2022_puzzle_00_input.txt'
+        param = 'aoc_2023_puzzle_00_input.txt'
     print(f'PARAM: [ {param} ]')
     path = 'data/puzzle_00/'
     mydata = load_puzzle(path, param)
@@ -47,8 +47,8 @@ def main():
     print('')
 
     print('')
-    print('(puzzle00a) end::')
-    return mysolution
+    print('(puzzle_2023-00a) end::')
+    return 0
 
 
 # ----------------------------------------
