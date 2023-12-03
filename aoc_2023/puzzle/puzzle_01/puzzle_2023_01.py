@@ -1,4 +1,5 @@
 import sys
+import re
 
 
 def load_puzzle(path, puzzle_input):
@@ -12,13 +13,36 @@ def load_puzzle(path, puzzle_input):
     return tmp
 
 
+def process_input(data):
+    print('---- process line data: ' + str(data))
+
+    # get first digit value
+    digit_1 = re.search(r'[0-9]+', data).group()
+    print(f'digit_1: {digit_1}')
+
+    # get last digit value
+    reversed_data = "".join(reversed(data))
+    digit_2 = re.search(r'[0-9]+', reversed_data).group()
+    print(f'digit_2: {digit_2}')
+
+    # assemble two-digit number
+    line_value = int(digit_1) * 10 + int(digit_2)
+    print(f'line_value: {line_value}')
+    return line_value
+
+
 def solve_puzzle(indata):
     print('-- solving for ' + str(indata))
     item_sum = 0
 
     for data in indata:
         print('do something with : ' + str(data) + ' ')
-        item_sum = item_sum + int(data)
+
+        # send line data to be processed.  return will be an integer value.
+        data_value = process_input(data)
+
+        item_sum = item_sum + data_value
+        print(f'running total: {item_sum}')
     return item_sum
 
 
