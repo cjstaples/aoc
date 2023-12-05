@@ -17,12 +17,12 @@ def process_input(data):
     print('---- process line data: ' + str(data))
 
     # get first digit value
-    digit_1 = re.search(r'[0-9]+', data).group()
+    digit_1 = re.search(r'[0-9]', data).group()
     print(f'digit_1: {digit_1}')
 
     # get last digit value
     reversed_data = "".join(reversed(data))
-    digit_2 = re.search(r'[0-9]+', reversed_data).group()
+    digit_2 = re.search(r'[0-9]', reversed_data).group()
     print(f'digit_2: {digit_2}')
 
     # assemble two-digit number
