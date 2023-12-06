@@ -17,18 +17,38 @@ def process_input(data):
     print('---- process line data: ' + str(data))
 
     # get first digit value
-    digit_1 = re.search(r'[0-9]', data).group()
-    print(f'digit_1: {digit_1}')
+    # digit_1 = re.search(r'[0-9]', data).group()
+    digit_1 = re.search(r'[0-9]', data)
+    if digit_1 is not None:
+        digit_1 = digit_1.group()
+        print(f'digit_1: {digit_1}')
+    else:
+        print('---- no digits')
 
     # get last digit value
     reversed_data = "".join(reversed(data))
-    digit_2 = re.search(r'[0-9]', reversed_data).group()
-    print(f'digit_2: {digit_2}')
+    # digit_2 = re.search(r'[0-9]', reversed_data).group()
+    digit_2 = re.search(r'[0-9]', reversed_data)
+    if digit_2 is not None:
+        digit_2 = digit_2.group()
+        print(f'digit_2: {digit_2}')
+    else:
+        print('---- no digits')
 
     # assemble two-digit number
-    line_value = int(digit_1) * 10 + int(digit_2)
+    if digit_1 and digit_2:
+        line_value = int(digit_1) * 10 + int(digit_2)
+    else:
+        line_value = 0
     print(f'line_value: {line_value}')
     return line_value
+
+
+def pre_sub_digits_for_text(data):
+    print('---- sub digits in data: ' + str(data))
+    new_data = data
+    print('---- returning         : ' + str(new_data))
+    return new_data
 
 
 def solve_puzzle(indata):
@@ -38,8 +58,11 @@ def solve_puzzle(indata):
     for data in indata:
         print('do something with : ' + str(data) + ' ')
 
+        # preprocess input data
+        intermediate_data = pre_sub_digits_for_text(data)
+
         # send line data to be processed.  return will be an integer value.
-        data_value = process_input(data)
+        data_value = process_input(intermediate_data)
 
         item_sum = item_sum + data_value
         print(f'running total: {item_sum}')
