@@ -16,12 +16,12 @@ class TestPuzzle2023(unittest.TestCase):
     def test_sample_01_test(self):
         mydata = load_puzzle('../data/puzzle_01/', 'aoc_2023_puzzle_01_input_sample.txt')
         t = solve_puzzle(mydata)
-        assert t == 142
+        assert t == 72
 
     def test_sample_01_test_a(self):
         mydata = load_puzzle('../data/puzzle_01/', 'aoc_2023_puzzle_01_input_sample_a.txt')
         t = solve_puzzle(mydata)
-        assert t == 157
+        assert t == 87
 
     def test_sample_01_test_b(self):
         mydata = load_puzzle('../data/puzzle_01/', 'aoc_2023_puzzle_01_input_sample_b.txt')
@@ -32,6 +32,11 @@ class TestPuzzle2023(unittest.TestCase):
         mydata = load_puzzle('../data/puzzle_01/', 'aoc_2023_puzzle_01_input_sample_c.txt')
         t = solve_puzzle(mydata)
         assert t == 545
+
+    def test_sample_01_test_d(self):
+        mydata = load_puzzle('../data/puzzle_01/', 'aoc_2023_puzzle_01_input_sample_d.txt')
+        t = solve_puzzle(mydata)
+        assert t == 495
 
 
 if __name__ == '__main__':

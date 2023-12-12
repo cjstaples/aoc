@@ -14,6 +14,7 @@ def load_puzzle(path, puzzle_input):
 
 
 def process_input(data):
+    print('---- ------- ---- ---- -------------')
     print('---- process line data: ' + str(data))
 
     # get first digit value
@@ -27,17 +28,23 @@ def process_input(data):
 
     # get last digit value
     reversed_data = "".join(reversed(data))
-    # digit_2 = re.search(r'[0-9]', reversed_data).group()
+
+    # handle when there is only one digit in data to avoid 11 22 type duplication
+    count_digits = len(re.findall(r'[0-9]', reversed_data))
+    print(f'count_digits: {count_digits}')
+
     digit_2 = re.search(r'[0-9]', reversed_data)
-    if digit_2 is not None:
+    if digit_2 is not None and count_digits > 1:
         digit_2 = digit_2.group()
         print(f'digit_2: {digit_2}')
     else:
         print('---- no digits')
 
     # assemble two-digit number
-    if digit_1 and digit_2:
+    if digit_1 and digit_2 and count_digits > 1:
         line_value = int(digit_1) * 10 + int(digit_2)
+    elif digit_1:
+        line_value = int(digit_1)
     else:
         line_value = 0
     print(f'line_value: {line_value}')
@@ -45,9 +52,21 @@ def process_input(data):
 
 
 def pre_sub_digits_for_text(data):
-    print('---- sub digits in data: ' + str(data))
+    print('---- pre sub digits in data: ' + str(data))
     new_data = data
-    print('---- returning         : ' + str(new_data))
+    print(re.sub('zero','0', new_data))
+    new_data = re.sub('zero','0', new_data)
+    new_data = re.sub('one','1', new_data)
+    new_data = re.sub('two','2', new_data)
+    new_data = re.sub('three','3', new_data)
+    new_data = re.sub('four','4', new_data)
+    new_data = re.sub('five','5', new_data)
+    new_data = re.sub('six','6', new_data)
+    new_data = re.sub('seven','7', new_data)
+    new_data = re.sub('eight','8', new_data)
+    new_data = re.sub('nine','9', new_data)
+
+    print('---- pre sub returning     : ' + str(new_data))
     return new_data
 
 
