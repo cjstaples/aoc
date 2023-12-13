@@ -29,19 +29,21 @@ def process_input(data):
     # get last digit value
     reversed_data = "".join(reversed(data))
 
-    # handle when there is only one digit in data to avoid 11 22 type duplication
+    # future - handle when there is only one digit in data to avoid 11 22 type duplication
     count_digits = len(re.findall(r'[0-9]', reversed_data))
     print(f'count_digits: {count_digits}')
 
     digit_2 = re.search(r'[0-9]', reversed_data)
-    if digit_2 is not None and count_digits > 1:
+    # future - if digit_2 is not None and count_digits > 1:
+    if digit_2 is not None:
         digit_2 = digit_2.group()
         print(f'digit_2: {digit_2}')
     else:
         print('---- no digits')
 
     # assemble two-digit number
-    if digit_1 and digit_2 and count_digits > 1:
+    # future - if digit_1 and digit_2 and count_digits > 1:
+    if digit_1 and digit_2:
         line_value = int(digit_1) * 10 + int(digit_2)
     elif digit_1:
         line_value = int(digit_1)
@@ -54,17 +56,27 @@ def process_input(data):
 def pre_sub_digits_for_text(data):
     print('---- pre sub digits in data: ' + str(data))
     new_data = data
-    print(re.sub('zero','0', new_data))
-    new_data = re.sub('zero','0', new_data)
-    new_data = re.sub('one','1', new_data)
-    new_data = re.sub('two','2', new_data)
-    new_data = re.sub('three','3', new_data)
-    new_data = re.sub('four','4', new_data)
-    new_data = re.sub('five','5', new_data)
-    new_data = re.sub('six','6', new_data)
-    new_data = re.sub('seven','7', new_data)
-    new_data = re.sub('eight','8', new_data)
-    new_data = re.sub('nine','9', new_data)
+
+    new_data = re.sub('oneight', '18', new_data)
+    new_data = re.sub('twone', '21', new_data)
+    new_data = re.sub('threeight', '38', new_data)
+    new_data = re.sub('fiveight', '58', new_data)
+    new_data = re.sub('sevenine', '79', new_data)
+    new_data = re.sub('eightwo', '82', new_data)
+    new_data = re.sub('eighthree', '83', new_data)
+    new_data = re.sub('nineight', '98', new_data)
+    new_data = re.sub('zerone', '01', new_data)
+
+    new_data = re.sub('zero', '0', new_data)
+    new_data = re.sub('one', '1', new_data)
+    new_data = re.sub('two', '2', new_data)
+    new_data = re.sub('three', '3', new_data)
+    new_data = re.sub('four', '4', new_data)
+    new_data = re.sub('five', '5', new_data)
+    new_data = re.sub('six', '6', new_data)
+    new_data = re.sub('seven', '7', new_data)
+    new_data = re.sub('eight', '8', new_data)
+    new_data = re.sub('nine', '9', new_data)
 
     print('---- pre sub returning     : ' + str(new_data))
     return new_data
